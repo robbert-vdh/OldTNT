@@ -1,7 +1,7 @@
 name: OldTNT
 main: me.coolblinger.oldtnt.OldTNT
 autthor: coolblinger
-version: 1.0
+version: 1.0.1
 description: >
   A bukkit plugin that makes TNT work the way it did before beta 1.7.
 commands:

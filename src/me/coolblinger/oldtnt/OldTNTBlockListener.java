@@ -19,13 +19,18 @@ public class OldTNTBlockListener extends BlockListener {
 		Block block = event.getBlock();
 		if (block.getType() == Material.TNT && !event.isCancelled()) {
 			CraftWorld cWorld = (CraftWorld) block.getWorld();
-			EntityTNTPrimed tnt = new EntityTNTPrimed(cWorld.getHandle(), block.getX(), block.getY(), block.getZ());
-			tnt.setPositionRotation(block.getLocation().getBlockX() + 0.5, block.getLocation().getBlockY(), block.getLocation().getBlockZ() + 0.5, 0, 0);
+			EntityTNTPrimed tnt = new EntityTNTPrimed(cWorld.getHandle(), block.getX() + 0.5D, block.getY() + 0.5D, block.getZ() + 0.5D);
 			cWorld.getHandle().addEntity(tnt);
-			if (tnt.fuseTicks > 0) // I added this check because Eclipse would otherwise give warnings about the fact that primedTNT is never used.
-			{
-				block.setType(Material.AIR);
-			}
+			// The below code's purpose is to make the transition from a TNT block to primed TNT look a little bit better.
+			final Block block2 = block;
+			block.setType(Material.AIR);
+			block2.getLocation().getBlock().setType(Material.TNT);
+			plugin.getServer().getScheduler().scheduleSyncDelayedTask(plugin, new Runnable() {
+			    public void run() {
+					block2.setType(Material.AIR);
+			    }
+			}, 1L);
+			event.setCancelled(true);
 		}
 	}
 }
