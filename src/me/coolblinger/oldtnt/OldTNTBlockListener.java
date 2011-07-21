@@ -22,7 +22,7 @@ public class OldTNTBlockListener extends BlockListener {
 		Player player = event.getPlayer();
 		ItemStack itemInHand = player.getItemInHand();
 		
-		if (block.getType() == Material.TNT && !event.isCancelled() && itemInHand.getType() != Material.SHEARS) {
+		if (block.getType() == Material.TNT && !event.isCancelled() && itemInHand.getType() != Material.SHEARS && !plugin.ignoredWorldsList.contains(player.getWorld().getName())) {
 			CraftWorld cWorld = (CraftWorld) block.getWorld();
 			EntityTNTPrimed tnt = new EntityTNTPrimed(cWorld.getHandle(), block.getX() + 0.5D, block.getY() + 0.5D, block.getZ() + 0.5D);
 			cWorld.getHandle().addEntity(tnt);

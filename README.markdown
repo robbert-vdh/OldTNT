@@ -9,6 +9,8 @@
 -   none
 
 ## Changelog:
+1.2:
+-   Added per world disabling.
 1.1:
 -   TNT is now defusable using sheers. (Thanks Serialk)
 1.0.2:
