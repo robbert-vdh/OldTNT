@@ -1,21 +1,23 @@
-# Tested with RB [_1000_] (http://ci.bukkit.org/job/dev-CraftBukkit/1000/)
-## Download link:
--   http://dl.dropbox.com/u/677732/uploads/OldTNT.jar
-
 ## Dependencies:
 -   none
 
-## Bugs:
--   none
-
 ## Changelog:
-1.2:
+__1.2:__
+
 -   Added per world disabling.
-1.1:
+
+__1.1:__
+
 -   TNT is now defusable using sheers. (Thanks Serialk)
-1.0.2:
+
+__1.0.2:__
+
 -   Reverted the last commit until I know a better way to do it.
-1.0.1:
+
+__1.0.1:__
+
 -   Made the transition between TNT and primed TNT look a little bit smoother.
-1.0:
+
+__1.0:__
+
 -   Initial release
